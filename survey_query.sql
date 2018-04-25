@@ -418,88 +418,87 @@ FROM
 		JOIN
 		    (SELECT q1, user_id,
 		        CASE
-		            WHEN q1 LIKE('%') OR NULL THEN '1' ELSE '1'
+		            WHEN q1 LIKE('%') OR NULL THEN 1 ELSE 1
 		            END AS "question"
 		            FROM survey AS "question"
 		     UNION
 		     SELECT q2, user_id,
 		        CASE
-		            WHEN q2 LIKE('%') OR NULL THEN '2' ELSE '2'
+		            WHEN q2 LIKE('%') OR NULL THEN 2 ELSE 2
 		            END AS "question"
 		            FROM survey AS question
 		     UNION
 		     SELECT q3, user_id,
 		        CASE
-		            WHEN q3 LIKE('%') OR NULL THEN '3' ELSE '3'
+		            WHEN q3 LIKE('%') OR NULL THEN 3 ELSE 3
 		            END AS "question"
 		            FROM survey AS question
 		     UNION
 		     SELECT q4, user_id,
 		        CASE
-		            WHEN q4 LIKE('%') OR NULL THEN '4' ELSE '4'
+		            WHEN q4 LIKE('%') OR NULL THEN 4 ELSE 4
 		            END AS "question"
 		            FROM survey AS question
 		     UNION
 		     SELECT q5, user_id,
 		        CASE
-		            WHEN q5 LIKE('%') OR NULL THEN '5' ELSE '5'
+		            WHEN q5 LIKE('%') OR NULL THEN 5 ELSE 5
 		            END AS "question"
 		            FROM survey AS question
 		    UNION
 		    SELECT q6, user_id,
 		        CASE
-		            WHEN q6 LIKE('%') OR NULL THEN '6' ELSE '6'
+		            WHEN q6 LIKE('%') OR NULL THEN 6 ELSE 6
 		            END AS "question"
 		            FROM survey AS question
 		    UNION
 		    SELECT q7, user_id,
 		        CASE
-		            WHEN q7 LIKE('%') OR NULL THEN '7' ELSE '7'
+		            WHEN q7 LIKE('%') OR NULL THEN 7 ELSE 7
 		            END AS "question"
 		            FROM survey AS question
 		    UNION
 		    SELECT q8, user_id,
 		        CASE
-		            WHEN q8 LIKE('%') OR NULL THEN '8' ELSE '8'
+		            WHEN q8 LIKE('%') OR NULL THEN 8 ELSE 8
 		            END AS "question"
 		            FROM survey AS question
 		    UNION
 		    SELECT q9, user_id,
 		        CASE
-		            WHEN q9 LIKE('%') OR NULL THEN '9' ELSE '9'
+		            WHEN q9 LIKE('%') OR NULL THEN 9 ELSE 9
 		            END AS "question"
 		            FROM survey AS question
 		    UNION
 		    SELECT q10, user_id,
 		        CASE
-		            WHEN q10 LIKE('%') OR NULL THEN '10' ELSE '10'
+		            WHEN q10 LIKE('%') OR NULL THEN 10 ELSE 10
 		            END AS "question"
 		            FROM survey AS question
 		    UNION
 		    SELECT q11, user_id,
 		        CASE
-		            WHEN q11 LIKE('%') OR NULL THEN '11' ELSE '11'
+		            WHEN q11 LIKE('%') OR NULL THEN 11 ELSE 11
 		            END AS "question"
 		            FROM survey AS question
 		    UNION
 		    SELECT q12, user_id,
 		        CASE
-		            WHEN q12 LIKE('%') OR NULL THEN '12' ELSE '12'
+		            WHEN q12 LIKE('%') OR NULL THEN 12 ELSE 12
 		            END AS "question"
 		            FROM survey AS question
 		    UNION
 		    SELECT q13, user_id,
 		        CASE
-		            WHEN q13 LIKE('%') OR NULL THEN '13' ELSE '13'
+		            WHEN q13 LIKE('%') OR NULL THEN 13 ELSE 13
 		            END AS "question"
 		            FROM survey AS question
 		    UNION
 		    SELECT q14, user_id,
 		        CASE
-		            WHEN q14 LIKE('%') OR NULL THEN '14' ELSE '14'
+		            WHEN q14 LIKE('%') OR NULL THEN 14 ELSE 14
 		            END AS "question"
 		            FROM survey AS question) AS b
 ON a.user_id = b.user_id) AS a) AS a
 GROUP BY CAST(a.user_id AS INT), CAST(a.question AS INT)
 ORDER BY 1
-LIMIT 1000
